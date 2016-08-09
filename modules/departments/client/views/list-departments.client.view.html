@@ -13,7 +13,8 @@
         <span data-ng-if="department.user" data-ng-bind="department.user.displayName"></span>
         <span data-ng-if="!department.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" data-ng-bind="department.name"></h4>
+      <h4>Department: {{department.name}}</h4>
+      <h4>Description: {{department.description}}</h4>
     </a>
   </div>
   <div class="alert alert-warning text-center" data-ng-if="vm.departments.$resolved && !vm.departments.length">

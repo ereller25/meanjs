@@ -1,5 +1,6 @@
 <section>
   <div class="page-header">
+    
     <h1 data-ng-bind="vm.customer.name"></h1>
   </div>
   <div class="pull-right"
@@ -23,4 +24,8 @@
     </em>
   </small>
   <p class="lead" data-ng-bind="vm.customer.content"></p>
+        <h4>Customer Name: {{vm.customer.firstname}} {{vm.ustomer.lastname}}</h4>
+      <h4>Phone: {{vm.customer.phone}}</h4>
+      <h4>Email: {{vm.customer.email}}</h4>
+      <h4>Birthday: {{vm.customer.birthday | date}}</h4>
 </section>

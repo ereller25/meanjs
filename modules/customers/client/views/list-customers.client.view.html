@@ -13,7 +13,10 @@
         <span data-ng-if="customer.user" data-ng-bind="customer.user.displayName"></span>
         <span data-ng-if="!customer.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" data-ng-bind="customer.name"></h4>
+      <h4>Customer Name: {{customer.firstname}} {{customer.lastname}}</h4>
+      <h4>Email: {{customer.email}}</h4>
+
+      
     </a>
   </div>
   <div class="alert alert-warning text-center" data-ng-if="vm.customers.$resolved && !vm.customers.length">
