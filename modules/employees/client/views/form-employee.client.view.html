@@ -38,7 +38,8 @@
           </div>
           <!--Department -->
           <label class="control-label" for="department">Department</label>
-          <input name="department" type="text" ng-model="vm.employee.department" id="department" class="form-control" placeholder="department" required>
+           <select name="departmentsIn" type="text" ng-options="departments.name as departments.name for departments in vm.departments" ng-model="vm.employee.department" id="departments" class="form-control" placeholder="Departments" required>
+          </select>
           <div ng-messages="vm.form.employeeForm.department.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Employee department is required.</p>
           </div>
