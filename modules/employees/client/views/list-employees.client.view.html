@@ -1,18 +1,21 @@
 <section>
   <div class="page-header">
     <h1>Employees</h1>
+
+<label>Search: <input type="text" ng-model="searchText"></label>
+
   </div>
   <div class="list-group">
-    <a data-ng-repeat="employee in vm.employees"
+    <a data-ng-repeat="employee in vm.employees | filter:searchText"
        data-ui-sref="employees.view({ employeeId: employee._id })"
        class="list-group-item">
-      <small class="list-group-item-text">
+      <!-- <small class="list-group-item-text">
         Posted on
         <span data-ng-bind="employee.created | date:'mediumDate'"></span>
         by
         <span data-ng-if="employee.user" data-ng-bind="employee.user.displayName"></span>
         <span data-ng-if="!employee.user">Deleted User</span>
-      </small>
+      </small> -->
       <h4>Employee Name: {{employee.firstname}} {{employee.lastname}}</h4>
       <h4>Department: {{employee.department}}</h4>
 
