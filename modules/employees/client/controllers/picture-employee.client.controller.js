@@ -3,22 +3,21 @@
 
   angular
     .module('employees')
-    .controller('ChangeProfilePictureController', ChangeProfilePictureController);
+    .controller('ChangeEmployeePictureController', ChangeEmployeePictureController);
 
-  ChangeProfilePictureController.$inject = ['$scope', '$timeout', '$window', 'Authentication', 'FileUploader'];
+  ChangeEmployeePictureController.$inject = ['$scope', '$timeout', '$window', 'FileUploader'];
 
-  function ChangeProfilePictureController($scope, $timeout, $window, Authentication, FileUploader) {
+  function ChangeEmployeePictureController($scope, $timeout, $window, FileUploader) {
     var vm = this;
 
-    //vm.employee = Authentication.user;
-    vm.imageURL = vm.employee.profileImageURL;
-    vm.uploadProfilePicture = uploadProfilePicture;
+    vm.imageURL = vm.employee.employeeImageURL;
+    vm.uploadEmployeePicture = uploadEmployeePicture;
 
     vm.cancelUpload = cancelUpload;
     // Create file uploader instance
     vm.uploader = new FileUploader({
-      url: 'api/users/picture',
-      alias: 'newProfilePicture',
+      url: 'api/employees/picture',
+      alias: 'newEmployeePicture',
       onAfterAddingFile: onAfterAddingFile,
       onSuccessItem: onSuccessItem,
       onErrorItem: onErrorItem
@@ -52,9 +51,6 @@
       // Show success message
       vm.success = true;
 
-      // Populate user object
-      vm.user = Authentication.user = response;
-
       // Clear upload buttons
       cancelUpload();
     }
@@ -69,7 +65,7 @@
     }
 
     // Change user profile picture
-    function uploadProfilePicture() {
+    function uploadEmployeePicture() {
       // Clear messages
       vm.success = vm.error = null;
 
@@ -80,7 +76,7 @@
     // Cancel the upload process
     function cancelUpload() {
       vm.uploader.clearQueue();
-      vm.imageURL = vm.employee.profileImageURL;
+      vm.imageURL = vm.employee.employeeImageURL;
     }
   }
 }());

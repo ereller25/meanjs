@@ -2,20 +2,41 @@
   <div class="page-header">
     <h1 data-ng-bind="vm.employee.name"></h1>
   </div>
-  <div class="pull-right"
-       data-ng-show="vm.employee.isCurrentUserOwner">
-    <a class="btn btn-primary"
-       data-ui-sref="employees.edit({ employeeId: vm.employee._id })">
-      <i class="glyphicon glyphicon-edit"></i>
-    </a>
-    <a class="btn btn-primary" ng-click="vm.uploadProfilePicture({ vm.employee.displayName });">
+  <div class="pull-right">
+    <nav class="col-sm-3 col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li ui-sref-active="active">
+          <a data-ui-sref="employees.edit({ employeeId: vm.employee._id })">Edit Profile</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="employees.picture">Change Profile Picture</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-sm-9 col-md-8 settings-view">
+      <div ui-view></div>
+    </div>
+  </div>
+  <p class="lead" data-ng-bind="vm.employee.content"></p>
+  <h4>Employee Name: {{vm.employee.firstname}} {{vm.employee.lastname}}</h4>
+      <h4>Address: {{vm.employee.address}}</h4>
+      <h4>Phone: {{vm.employee.phone}}</h4>
+      <h4>Email: {{vm.employee.email}}</h4>
+      <h4>Department: {{vm.employee.department}}</h4>
+      <h4>Date Hired: {{vm.employee.datehired | date}}</h4>
+</section>
+
+    <!--Photo Button 
+    <a class="btn btn-primary" ng-click="vm.uploadEmployeePicture({ vm.employee.displayName });">
       <i class="glyphicon glyphicon-picture"></i>
+
+
+
     </a>
     <a class="btn btn-primary" data-ng-click="vm.remove()">
       <i class="glyphicon glyphicon-trash"></i>
-    </a>
-    
-  </div>
+    </a> -->
+
  <!-- <small>
     <em class="text-muted">
       Posted on
@@ -26,10 +47,4 @@
       <span data-ng-if="!vm.employee.user">Deleted User</span>
     </em>
   </small> -->
-  <p class="lead" data-ng-bind="vm.employee.content"></p>
-  <h4>Employee Name: {{vm.employee.firstname}} {{vm.employee.lastname}}</h4>
-      <h4>Address: {{vm.employee.address}}</h4>
-      <h4>Phone: {{vm.employee.phone}}</h4>
-      <h4>Email: {{vm.employee.email}}</h4>
-      <h4>Date Hired: {{vm.employee.datehired | date}}</h4>
-</section>
+

@@ -52,7 +52,7 @@
       .state('employees.picture', {
         url: '/picture',
         templateUrl: 'modules/employees/client/views/picture-employee.client.view.html',
-        controller: 'ChangeProfilePictureController',
+        controller: 'ChangeEmployeePictureController',
         controllerAs: 'vm',
         data: {
           pageTitle: 'Settings picture'
