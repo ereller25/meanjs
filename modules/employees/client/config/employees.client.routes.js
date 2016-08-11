@@ -49,6 +49,15 @@
           pageTitle: 'Edit Employee {{ employeeResolve.name }}'
         }
       })
+      .state('employees.picture', {
+        url: '/picture',
+        templateUrl: 'modules/employees/client/views/picture-employee.client.view.html',
+        controller: 'ChangeProfilePictureController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Settings picture'
+        }
+      })
       .state('employees.view', {
         url: '/:employeeId',
         templateUrl: 'modules/employees/client/views/view-employee.client.view.html',

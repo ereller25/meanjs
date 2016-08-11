@@ -8,7 +8,7 @@
        data-ui-sref="employees.edit({ employeeId: vm.employee._id })">
       <i class="glyphicon glyphicon-edit"></i>
     </a>
-    <a class="btn btn-primary" ng-click="vm.uploadProfilePicture();">
+    <a class="btn btn-primary" ng-click="vm.uploadProfilePicture({ vm.employee.displayName });">
       <i class="glyphicon glyphicon-picture"></i>
     </a>
     <a class="btn btn-primary" data-ng-click="vm.remove()">
