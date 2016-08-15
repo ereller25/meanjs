@@ -19,4 +19,7 @@ module.exports = function(app) {
 
   // Finish by binding the Employee middleware
   app.param('employeeId', employees.employeeByID);
+
+  //app.route('/api/employees/picture').post(employees.changeEmployeePicture);
+
 };
